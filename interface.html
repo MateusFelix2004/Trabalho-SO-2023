@@ -22,7 +22,7 @@
   <p>Insira o tamanho necessário do processo:</p>
   <input type="number" id="tamanhoNecessario" min="1">
   <br><br>
-  <button onclick="firstFit(Number(document.getElementById('tamanhoNecessario').value))" title="lista de bloco de memória passado como parâmetro por padrão. + informações no console">Executar First Fit</button>
+  <button id="q1" title="lista de bloco de memória passado como parâmetro por padrão. + informações no console">Executar First Fit</button>
   <p id="resultadoFirstFit" class="result"></p>
 
   <!-- Questão 2 - Round Robin -->
@@ -31,12 +31,12 @@
   <input id="processosRoundRobin" type="text" placeholder="Exemplo: Word">
   <p>Tempo de execução do processo:</p>
   <input id="processosRoundRobinTempo" type="number" placeholder="Exemplo: 1, 2, 3">
-  <button onclick="q2AddProcesso()">Adicionar processo</button>
+  <button class="q2">Adicionar processo</button>
   <br>
   <p>Valor do quantum:</p>
   <input type="number" id="quantumRoundRobin" min="1" value="3">
   <br><br>
-  <button onclick="roundRobin(q2Processos, document.getElementById('quantumRoundRobin').value)">Executar Round Robin</button>
+  <button id="q2">Executar Round Robin</button>
   <p id="resultadoRoundRobin" class="result"></p>
 
   <!-- Questão 3 - Escalonamento por Prioridade -->
@@ -47,9 +47,9 @@
   <input id="temposExecucaoPrioridade" type="number" placeholder="Exemplo: 1, 2, 3">
   <p>Prioridade</p>
   <input id="prioridades" type="number" placeholder="Exemplo: 1, 2, 3" title="Maior valor = maior prioridade)">
-  <button onclick="q3AddProcesso()">Adicionar processo</button>
+  <button class="q3">Adicionar processo</button>
   <br><br>
-  <button onclick="escalonamentoPorPrioridade(q3Processos, q3Tempo, q3Prioridade)">Executar Escalonamento por Prioridade</button>
+  <button id="q3">Executar Escalonamento por Prioridade</button>
   <p id="resultadoEscalonamentoPorPrioridade" class="result"></p>
 
   <!-- Questão 4 - Best Fit -->
@@ -57,7 +57,7 @@
   <p>Insira o tamanho necessário do processo:</p>
   <input type="number" id="tamanhoNecessarioBestFit" min="1">
   <br><br>
-  <button onclick="bestFit(Number(document.getElementById('tamanhoNecessarioBestFit').value))">Executar Best Fit</button>
+  <button id="q4">Executar Best Fit</button>
   <p id="resultadoBestFit" class="result"></p>
 
   <!-- Questão 5 - Priority Preemptive -->
@@ -68,9 +68,9 @@
   <input id="temposExecucaoPriorityPreemptive" type="number" placeholder="Exemplo: 1, 2, 3">
   <p>Prioridade</p>
   <input id="prioridadesPriorityPreemptive" type="number" placeholder="Exemplo: 1, 2, 3" title="Maior valor = maior prioridade)">
-  <button onclick="q5AddProcesso()">Adicionar processo</button>
+  <button class="q5">Adicionar processo</button>
   <br><br>
-  <button onclick="priorityPreemptive(q5Processos, q5Tempo, q5Prioridade)">Executar Priority Preemptive</button>
+  <button id="q5">Executar Priority Preemptive</button>
   <p id="resultadoPriorityPreemptive" class="result"></p>
 
   <!-- Questão 6 - Agendador de Processos -->
@@ -81,12 +81,12 @@
   <input id="tempoAgendador" type="number" placeholder="Exemplo: 1, 2, 3">
   <p>Tamanho do processo:</p>
   <input id="tamanhoAgendador" type="number" placeholder="Exemplo: 1, 2, 3">
-  <button onclick="q6AddProcesso()">Adicionar processo</button>
+  <button class="q6">Adicionar processo</button>
   <br><br>
   <p>Insira o valor do quantum:</p>
   <input type="number" id="quantumAgendador" min="1" value="4">
   <br><br>
-  <button onclick="agendador_processos(q6Processos, q6Tamanho, Number(document.getElementById('quantumAgendador').value))">Executar Agendador de Processos</button>
+  <button id="q6">Executar Agendador de Processos</button>
   <p id="resultadoAgendadorProcessos" class="result"></p>
   <br><br><br><br>
   <script src="trabalhoSistemasOperacionais.js"></script>
