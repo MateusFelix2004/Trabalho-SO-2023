@@ -83,6 +83,37 @@ var q5Prioridade = [];
 var q6Processos = [];
 var q6Tamanho = [];
 
+document.addEventListener('click', function(event) {
+  var { id, classList } = event.target;
+
+  var targetHandlers = {
+    q1: () => firstFit(Number(document.getElementById('tamanhoNecessario').value)),
+    q2: () => roundRobin(q2Processos, document.getElementById('quantumRoundRobin').value),
+    q3: () => escalonamentoPorPrioridade(q3Processos, q3Tempo, q3Prioridade),
+    q4: () => bestFit(Number(document.getElementById('tamanhoNecessarioBestFit').value)),
+    q5: () => priorityPreemptive(q5Processos, q5Tempo, q5Prioridade),
+    q6: () => agendador_processos(q6Processos, q6Tamanho, Number(document.getElementById('quantumAgendador').value)),
+  };
+
+  var classHandlers = {
+    q2: () => q2AddProcesso(),
+    q3: () => q3AddProcesso(),
+    q5: () => q5AddProcesso(),
+    q6: () => q6AddProcesso(),
+  };
+
+  if (id && targetHandlers[id]) {
+    targetHandlers[id]();
+  } else {
+    Object.keys(classHandlers).forEach(className => {
+      if (classList.contains(className)) {
+        classHandlers[className]();
+      }
+    });
+  }
+});
+
+
 function limpaEntrada(){
 
     document.getElementById("processosRoundRobin").value = null;
